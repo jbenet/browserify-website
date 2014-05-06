@@ -1,0 +1,39 @@
+{
+  "name": "transformer-server",
+  "version": "0.0.1",
+  "description": "server running transformer",
+  "main": "index.js",
+  "bin": {
+    "transform": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jbenet/transformer-server.git"
+  },
+  "keywords": [
+    "dat",
+    "data",
+    "conversion",
+    "format",
+    "schema",
+    "server"
+  ],
+  "author": "https://github.com/jbenet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbenet/transformer-server/issues"
+  },
+  "dependencies": {
+    "transformer": "0.0.1",
+    "express": "~4.1.1",
+    "minimist": "0.0.8",
+    "less": "~1.7.0",
+    "cssmin": "~0.4.1",
+    "swig": "~1.3.2",
+    "swig-extras": "0.0.1",
+    "rw": "0.0.4"
+  }
+}
