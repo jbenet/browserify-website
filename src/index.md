@@ -12,12 +12,15 @@
   </h3>
 </div>
 
+<div class="centered">
+<iframe src="http://ghbtns.com/github-btn.html?user=jbenet&repo=transformer&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+</div>
 
 ## Transform the Terminal
 
 <div class="subtitle">Pipe-ready conversion utility</div>
 
-First install node, which ships with npm. Then do:
+First [install node](http://nodejs.org/download/), which ships with [npm](https://www.npmjs.org/). Then do:
 
 ```
 > npm install -g dat-transformer
