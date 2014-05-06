@@ -1,5 +1,5 @@
 
-all: js css static pages
+all: js css static pages build/CNAME
 
 .PHONY: clean test
 
@@ -54,3 +54,7 @@ pages: build/index.html build/modules/index.html build/browser/index.html
 build/%.html: src/%.md
 	@mkdir -p `dirname $@`
 	./render.js < $< > $@
+
+build/CNAME: CNAME
+	@mkdir -p `dirname $@`
+	cp $< $@
