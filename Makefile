@@ -5,7 +5,6 @@ all: js css static pages
 
 clean:
 	rm -rf -- build
-	rm -rf -- js-compiled
 
 # watching
 WATCH=*other/*;static/*;*src/*.md;
