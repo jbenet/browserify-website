@@ -5,7 +5,7 @@ make clean
 make
 git add -f build/
 git commit -m "payload"
-git filter-branch --subdirectory-filter build/ -f
-git push origin deploy:gh-pages
 git checkout master
+git filter-branch --subdirectory-filter build/ -f deploy
+git push -f origin deploy:gh-pages
 git branch -D deploy
