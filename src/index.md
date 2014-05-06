@@ -10,10 +10,10 @@
     <span class="emph">types</span> and
     <span class="emph">conversions</span>.
   </h3>
-</div>
-
-<div class="centered">
-<iframe src="http://ghbtns.com/github-btn.html?user=jbenet&repo=transformer&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+  <div class="items">
+    <span><a href="http://dat-data.com"><img src="/static/img/dat.png" /></a></span>
+    <iframe id="stars" src="http://ghbtns.com/github-btn.html?user=jbenet&repo=transformer&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+  </div>
 </div>
 
 ## Transform the Terminal
