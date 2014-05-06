@@ -1,17 +1,14 @@
 {
-  "name": "transformer-server",
+  "name": "transformer-website",
   "version": "0.0.1",
-  "description": "server running transformer",
+  "description": "website for dat-transformer",
   "main": "index.js",
-  "bin": {
-    "transform": "cli.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/jbenet/transformer-server.git"
+    "url": "http://github.com/jbenet/transformer-website.git"
   },
   "keywords": [
     "dat",
@@ -24,7 +21,7 @@
   "author": "https://github.com/jbenet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jbenet/transformer-server/issues"
+    "url": "https://github.com/jbenet/transformer-website/issues"
   },
   "dependencies": {
     "transformer": "0.0.1",
