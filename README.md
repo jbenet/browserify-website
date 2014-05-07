@@ -1,6 +1,6 @@
 # transformer website
 
-The static [transformer](http://github.com/jbenet/transformer) website.
+The static [transformer](http://github.com/jbenet/transformer) website: http://transformer.datadex.io
 
 ## contributing
 
