@@ -36,7 +36,7 @@ Now you can convert between formats:
 Boom. Can it do something more complicated?
 
 ```
-> echo '3301 Lyon St, 94123' | transform us-street-address us-city
+> echo '94123' | transform us-zipcode us-city
 San Francisco, CA
 ```
 
