@@ -8,12 +8,14 @@ w.transformer = transformer;
 
 
 w.bindHandlers = function() {
-  $('#transform-button').click(w.onClickTransform);
   $('#browser-transformer').submit(w.onClickTransform);
+  $('#btn-transform').click(w.onClickTransform);
+  $('#btn-example').click(w.onClickRandomExample);
+  $('#btn-reverse').click(w.onClickReverse);
 }
 
 w.onClickTransform = function(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   var text = $('#text-1').val().trim();
   if (!text)
@@ -33,14 +35,14 @@ w.onClickTransform = function(event) {
   xform(text, function(err, output) {
     if (err) throw err;
 
-    $('#text-2').text(output);
-    w.highlight($('#transformer-button'));
+    $('#text-2').val(output);
+    w.highlight($('#btn-transform'));
     w.highlight($('#text-2'));
   });
 }
 
 w.highlight = function(sel) {
-  $sel = $(sel);
+  var $sel = $(sel);
   $sel.focus();
   $sel.addClass('highlight');
   setTimeout(function() {
@@ -48,7 +50,31 @@ w.highlight = function(sel) {
   }, 200);
 }
 
+w.onClickRandomExample = function() {
+  val = ["beep boop", "ascii base32"];
+  $('#text-2').val('');
+  $('#text-1').val(val[0]);
+  $('#type-chain').val(val[1]);
+  w.highlight('#text-1');
+  w.highlight('#type-chain');
+  w.highlight('#btn-transform');
+  // w.onClickTransform();
+}
+
+w.onClickReverse = function() {
+  console.log('reversing');
+  $('#type-chain').val($('#type-chain').val().split(' ').reverse().join(' '));
+  w.highlight('#type-chain');
+  w.onChangedTypeChain();
+}
+
+w.onChangedTypeChain = function() {
+  if ($('#text-2').val() && $('#text-1').val() && $('#type-chain').val())
+    w.onClickTransform();
+}
+
 // entry point
 $(document).ready(function() {
+  $("[data-toggle='tooltip']").tooltip();
   w.bindHandlers();
 })
