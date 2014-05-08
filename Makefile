@@ -52,7 +52,7 @@ build/static/%.min.js: build/static/%.js
 
 build/static/bundle.js: $(shell node_modules/.bin/browserify --list js/web.js)
 	@mkdir -p `dirname $@`
-	node_modules/.bin/browserify js/web.js -o $@
+	node_modules/.bin/browserify -r fs:browserify-fs js/web.js -o $@
 
 
 # pages
