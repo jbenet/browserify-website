@@ -8,6 +8,10 @@ var w = module.exports = function() {
   w.bindHandlers();
 }
 
+var log = function(s) {
+  console.log('/browser/ ' + s);
+}
+
 w.transformer = transformer;
 window.transformer = transformer;
 
@@ -34,8 +38,8 @@ w.onClickTransform = function(event) {
   chain.push('string');
   var xform = transformer.async.compose(chain);
 
-  console.log(text);
-  console.log('transform ' + chain.join(' '));
+  log(text);
+  log('transform ' + chain.join(' '));
   xform(text, function(err, output) {
     if (err) throw err;
 
@@ -56,7 +60,7 @@ w.highlight = function(sel) {
 
 w.onClickRandomExample = function() {
   var ex = _.sample(examples);
-  console.log('using example: ' + ex);
+  log('using example: ' + ex);
   $('#text-2').val('');
   $('#text-1').val(ex[0]);
   $('#type-chain').val(ex[1]);
@@ -67,7 +71,7 @@ w.onClickRandomExample = function() {
 }
 
 w.onClickReverse = function() {
-  console.log('reversing');
+  log('reversing');
   $('#type-chain').val($('#type-chain').val().split(' ').reverse().join(' '));
   w.highlight('#type-chain');
   w.onChangedTypeChain();
