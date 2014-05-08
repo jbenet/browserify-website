@@ -13,9 +13,17 @@ w.bindHandlers = function() {
 }
 
 w.onClickTransform = function(event) {
+  event.preventDefault();
+
   var text = $('#text-1').val().trim();
-  var chain = $('#type-chain').val().trim().split(' ');
-  chain = _.filter(chain, function (x) { return x });
+  if (!text)
+    return w.highlight($('#text-1'));
+
+  var chain = $('#type-chain').val().trim();
+  if (!chain)
+    return w.highlight($('#type-chain'));
+
+  chain = _.filter(chain.split(' '), function (x) { return x });
   chain.unshift('string');
   chain.push('string');
   var xform = transformer.async.compose(chain);
@@ -26,12 +34,18 @@ w.onClickTransform = function(event) {
     if (err) throw err;
 
     $('#text-2').text(output);
-    // $('#text-2').addClass('shine');
-    // $('#text-2').removeClass('shine');
+    w.highlight($('#transformer-button'));
+    w.highlight($('#text-2'));
   });
+}
 
-  event.preventDefault();
-  return false;
+w.highlight = function(sel) {
+  $sel = $(sel);
+  $sel.focus();
+  $sel.addClass('highlight');
+  setTimeout(function() {
+    $sel.removeClass('highlight');
+  }, 200);
 }
 
 // entry point
