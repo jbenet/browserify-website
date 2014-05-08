@@ -9,7 +9,7 @@ var w = module.exports = function() {
 }
 
 w.transformer = transformer;
-
+window.transformer = transformer;
 
 w.bindHandlers = function() {
   $('#browser-transformer').submit(w.onClickTransform);
