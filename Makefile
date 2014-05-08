@@ -45,13 +45,20 @@ build/static/%: static/% build/CNAME
 	cp $< $@
 
 # js/coffee
-js:
+js: build/static/bundle.min.js
+
+build/static/%.min.js: build/static/%.js
+	node_modules/.bin/uglifyjs $< > $@
+
+build/static/bundle.js: $(shell node_modules/.bin/browserify --list js/web.js)
+	@mkdir -p `dirname $@`
+	node_modules/.bin/browserify js/web.js -o $@
 
 
 # pages
 pages: build/index.html build/modules/index.html build/browser/index.html
 
-build/%.html: src/%.md
+build/%.html: src/%.md other/base.html
 	@mkdir -p `dirname $@`
 	./render.js < $< > $@
 
