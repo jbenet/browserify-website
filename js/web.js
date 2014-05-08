@@ -1,6 +1,7 @@
 // var $ = require('jquery'); // already in browser
 // var _ = require('underscore'); // already in browser
 var transformer = require('dat-transformer');
+var modules = require('./modules');
 
 var w = module.exports = {}
 w.transformer = transformer;
