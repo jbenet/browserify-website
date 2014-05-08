@@ -2,6 +2,7 @@
 // var _ = require('underscore'); // already in browser
 var transformer = require('dat-transformer');
 var modules = require('./modules');
+var examples = require('./examples');
 
 var w = module.exports = {}
 w.transformer = transformer;
@@ -51,10 +52,11 @@ w.highlight = function(sel) {
 }
 
 w.onClickRandomExample = function() {
-  val = ["beep boop", "ascii base32"];
+  var ex = _.sample(examples);
+  console.log('using example: ' + ex);
   $('#text-2').val('');
-  $('#text-1').val(val[0]);
-  $('#type-chain').val(val[1]);
+  $('#text-1').val(ex[0]);
+  $('#type-chain').val(ex[1]);
   w.highlight('#text-1');
   w.highlight('#type-chain');
   w.highlight('#btn-transform');
