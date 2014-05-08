@@ -1,5 +1,5 @@
 
-all: js css static pages build/CNAME
+all: js css static pages
 
 .PHONY: clean test
 
@@ -39,7 +39,7 @@ build/static/%.css: other/%.less
 # static
 static: $(shell find static -type f | sed 's/^/build\//')
 
-build/static/%: static/%
+build/static/%: static/% build/CNAME
 	@mkdir -p `dirname $@`
 	@rm -f $@
 	cp $< $@
