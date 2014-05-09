@@ -2,6 +2,8 @@
 
 The static [transformer](http://github.com/jbenet/transformer) website: http://transform.datadex.io
 
+[![dat](http://img.shields.io/badge/Development%20sponsored%20by-dat-green.svg?style=flat)](http://dat-data.com)
+
 ## contributing
 
 we like pull requests that:
