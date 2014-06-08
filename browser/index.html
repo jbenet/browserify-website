@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>
+    
+      convert all your data
+    
+      | transformer
+  </title>
+  <meta name="description" content="transformer | convert all your data" />
+
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="/static/transformer.min.css" media="all" rel="stylesheet" type="text/css" />
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+</head>
+<body>
+<div class="main">
+
+
+<a class="sr-only" href="#content">Skip navigation</a>
+<header class="navbar navbar-inverse navbar-fixed-top main-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        TRANSFORMER
+      </a>
+    </div>
+
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+
+      <ul class="nav navbar-nav">
+        <li><a href="/#what-is-transformer-">About</a></li>
+        <li><a href="/modules">Modules</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/#transform-the-terminal">Terminal</a></li>
+        <li><a href="/#transform-javascript">Javascript</a></li>
+        <li><a href="/browser">Browser</a></li>
+      </ul>
+
+    </nav>
+  </div>
+</header>
+
+<main class="" id="content" role="main">
+  <div class="container main-content">
+
+    <div class="row">
+      <div class="col-sm-12 markdown" role="main">
+
+      <h1 id="transform-in-the-browser">Transform in the Browser</h1>
+<p>Transformer aims to be fully compatible with browsers, so you can run any conversion from any website. Try some right here! You can use the input boxes below, or even <a href="http://webmasters.stackexchange.com/questions/8525/how-to-open-the-javascript-console-in-different-browsers">open the console</a> and use it directly. And, see how to use <a href="#web-deployment">transformer in your website</a>.</p>
+<form id="browser-transformer" class="centered" role="form">
+  <h4 class="subtitle">1. Enter input data</h4>
+  <textarea id="text-1" class="form-control" placeholder="beep boop"></textarea>
+  <a href="#browser-transformer" class="btn btn-default" id="btn-example">
+    Try a random example.</a>
+
+  <h4 class="subtitle">2. Enter transformer types to convert</h4>
+  <div class="input-group">
+    <input id="type-chain" type="text" class="form-control" placeholder="ascii base32" />
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button" data-toggle="tooltip"
+        data-placement="top" title="Reverse" id="btn-reverse">
+        <i class="fa fa-arrows-h"></i></button>
+    </span>
+  </div>
+
+  <h4 class="subtitle">3. Click a button</h4>
+  <button id="btn-transform" class="btn btn-lg btn-danger">
+    &nbsp;<i class="fa fa-flash"></i> &nbsp;&nbsp;
+    TRANSFORM
+    &nbsp;&nbsp; <i class="fa fa-flash"></i>&nbsp;
+  </button>
+
+  <h4 class="subtitle">4. Receive the transformed text</h4>
+  <textarea id="text-2" class="form-control"
+    placeholder="-- Transformed data will go here --"></textarea>
+</form>
+
+
+
+<h2 id="web-deployment">Web Deployment</h2>
+<div class="subtitle">Transform your webpage</div>
+
+<p>This page uses <a href="http://browserify.org">Browserify</a>. Right now, all modules are <a href="https://github.com/jbenet/transformer-website/blob/master/js/modules.js">patched into the bundle</a>, because <a href="https://github.com/substack/node-browserify/issues/664#issuecomment-35615649">browserify does not handle dynamic requires</a>, which <a href="https://github.com/jbenet/transformer/blob/master/js/loader.js">transformer uses to load its modules</a>.</p>
+<p>Once modules are separated into their own proper npm modules (and <a href="/modules">the modules page works</a>), there will be a module/library to facilitate loading transformer modules directly in the browser with <a href="http://wzrd.in/">browserify-cdn</a> (like what <a href="http://requirebin.com">RequireBin</a> does).</p>
+<p>Watch <a href="http://github.com/jbenet/transformer">http://github.com/jbenet/transformer</a> to stay tuned! :)</p>
+
+
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <h5>Transformer is part of</h5>
+        <a href="http://dat-data.com">
+          <img src="/static/img/dat.png" id="dat-logo" />
+        </a>
+      </div>
+
+      <div>
+        <h5>Questions, feedback, feature requests?</h5>
+        <ul class="links no-bullet">
+          <li><a href="https://twitter.com/intent/user?screen_name=juanbenet" target="_blank"><i class="fa fa-twitter"></i> @juanbenet</a></li>
+          <li><a href="https://github.com/jbenet/transformer/issues/new" id="new-issue" target="_blank"><i class="fa fa-github"></i> jbenet/transformer</a></li>
+          <li><a href="irc://irc.freenode.net/dat" id="new-issue" target="_blank"><i class="fa fa-comments"></i> freenode/#dat</a></li>
+        </ul>
+        <script type="text/javascript">
+        $(document).ready(function () {
+          var params = "?body=%0A%0A%0AReported from " + window.location.href;
+          var $link = $('#new-issue')
+          $link.attr('href', $link.attr('href') + params);
+        });
+        </script>
+
+      </div>
+    </footer>
+
+  </div>
+</main>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.9.3/typeahead.min.js"></script>
+<script src="/static/bundle.js"></script>
+
+</div>
+</body>
+</html>
+
+
